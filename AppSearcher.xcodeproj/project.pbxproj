@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1FC58CD76DB0599F3D65A31A /* libPods-AppSearcher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79791CF475656269D0E56554 /* libPods-AppSearcher.a */; };
 		E30E046023F68B4C0055569C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E045F23F68B4C0055569C /* AppDelegate.swift */; };
-		E30E046223F68B4C0055569C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E046123F68B4C0055569C /* SceneDelegate.swift */; };
 		E30E046423F68B4C0055569C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30E046323F68B4C0055569C /* ViewController.swift */; };
 		E30E046723F68B4C0055569C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30E046523F68B4C0055569C /* Main.storyboard */; };
 		E30E046923F68B4C0055569C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30E046823F68B4C0055569C /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 		AFAB15C9EFAB58AEACF6334B /* Pods-AppSearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSearcher.release.xcconfig"; path = "Target Support Files/Pods-AppSearcher/Pods-AppSearcher.release.xcconfig"; sourceTree = "<group>"; };
 		E30E045C23F68B4C0055569C /* AppSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30E045F23F68B4C0055569C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E30E046123F68B4C0055569C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E30E046323F68B4C0055569C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E30E046623F68B4C0055569C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E30E046823F68B4C0055569C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				E30E045F23F68B4C0055569C /* AppDelegate.swift */,
-				E30E046123F68B4C0055569C /* SceneDelegate.swift */,
 				E30E046323F68B4C0055569C /* ViewController.swift */,
 				E30E046523F68B4C0055569C /* Main.storyboard */,
 				E30E046823F68B4C0055569C /* Assets.xcassets */,
@@ -88,7 +85,6 @@
 				42CC79532866B676890BC3C8 /* Pods-AppSearcher.debug.xcconfig */,
 				AFAB15C9EFAB58AEACF6334B /* Pods-AppSearcher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,7 +187,6 @@
 			files = (
 				E30E046423F68B4C0055569C /* ViewController.swift in Sources */,
 				E30E046023F68B4C0055569C /* AppDelegate.swift in Sources */,
-				E30E046223F68B4C0055569C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STFT9V5W5K;
 				INFOPLIST_FILE = AppSearcher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.truesage.AppSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = STFT9V5W5K;
 				INFOPLIST_FILE = AppSearcher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.truesage.AppSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
