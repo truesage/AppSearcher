@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Response : Codable {
+class Response : Codable, CustomStringConvertible {
     var resultCount : Int?
     var results : [Result]?
+
+    var description: String {
+        "Response(resultCount: \(resultCount), results: \(results))"
+    }
 }

@@ -6,13 +6,12 @@
 import Foundation
 
 func BASE_LOG(filename: String = #file, line: Int = #line, funcname: String = #function) {
-    print("\(filename)[\(funcname)][Line \(line)]")
+    Log(filename: filename, line: line, funcname: funcname)
 }
 
 func Log(filename: String = #file, line: Int = #line, funcname: String = #function, output:Any...) {
     #if DEBUG
     let now = NSDate()
-    print("[\(now.description)][\(filename)][\(funcname)][Line \(line)] \(output)")
+    print("[\(now.description)][\(URL(fileURLWithPath: filename).lastPathComponent)][\(funcname)][Line \(line)] \(output)")
     #endif
 }
-
