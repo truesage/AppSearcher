@@ -1,0 +1,20 @@
+PODS:
+  - Cosmos (21.0.0)
+  - ReachabilitySwift (5.0.0)
+
+DEPENDENCIES:
+  - Cosmos (~> 21.0)
+  - ReachabilitySwift
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Cosmos
+    - ReachabilitySwift
+
+SPEC CHECKSUMS:
+  Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+
+PODFILE CHECKSUM: 3b5b995929c44f090eda7bdb4dc7a7758aced53a
+
+COCOAPODS: 1.8.4
