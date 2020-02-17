@@ -27,6 +27,7 @@ class BorderView: UIView {
     var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
+            layer.masksToBounds = true
 //            self.clipsToBounds = true
         }
     }

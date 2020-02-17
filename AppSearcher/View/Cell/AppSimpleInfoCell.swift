@@ -30,7 +30,27 @@ class AppSimpleInfoCell: UITableViewCell {
     }
     
     func setData(data: Result, indexPath: IndexPath) {
-        
+        BASE_LOG()
+        clear()
+        if let iconURL = data.artworkUrl512 {
+            imgIcon.downloaded(from: iconURL, contentMode: .scaleAspectFit)
+        }
+        lblName.text = data.trackName
+        lblSeller.text = data.sellerName
+        if let genres = data.genres, genres.count > 0 {
+            lblGenre.text = genres[0]
+        }
+        lblPrice.text = data.formattedPrice
+        viewRating.rating = data.averageUserRating ?? 0.0
+    }
+
+    func clear() {
+        imgIcon.image = nil
+        lblName.text = nil
+        lblSeller.text = nil
+        lblGenre.text = nil
+        lblPrice.text = nil
+        viewRating.rating = 0.0
     }
     
 }

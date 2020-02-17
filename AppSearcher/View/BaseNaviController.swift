@@ -18,6 +18,15 @@ class BaseNaviController: UINavigationController {
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         self.topViewController?.preferredStatusBarUpdateAnimation ?? super.preferredStatusBarUpdateAnimation
     }
+    override var shouldAutorotate: Bool {
+        self.topViewController?.shouldAutorotate ?? false
+    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        self.topViewController?.supportedInterfaceOrientations ?? .portrait
+    }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        self.topViewController?.preferredInterfaceOrientationForPresentation ?? .portrait
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

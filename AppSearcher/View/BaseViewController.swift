@@ -9,7 +9,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    var tableView: UITableView = UITableView.init()
+    let tableView = UITableView()
+
     var dataList: [Any]?
     var hasNotch: Bool {
         if #available(iOS 11.0, *) {
@@ -34,11 +35,38 @@ class BaseViewController: UIViewController {
         self.viewIfLoaded?.window != nil
     }
 
+    override func loadView() {
+        super.loadView()
+    }
+
+    private func initView() {
+
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.canCancelContentTouches = false
+        self.tableView.separatorStyle = .none
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 200
+
+        self.tableView.register(UINib(nibName: "AppSimpleInfoCell", bundle: Bundle.main), forCellReuseIdentifier: "AppSimpleInfoCell")
+        self.tableView.register(UINib(nibName: "BlankCell", bundle: Bundle.main), forCellReuseIdentifier: "BlankCell")
+
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self.tableView)
+//        self.tableView.backgroundColor = RGB(242, 242, 242)
+        self.tableView.backgroundColor = UIColor.white
+        self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initView()
 
 
     }
@@ -61,8 +89,13 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension;
+    }
 
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    }
 }
 
 extension BaseViewController: UITableViewDataSource {
