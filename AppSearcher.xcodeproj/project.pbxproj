@@ -29,8 +29,8 @@
 		E38DCC6023FB19CF007831A7 /* HorizontalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC5E23FB19CF007831A7 /* HorizontalCollectionCell.swift */; };
 		E38DCC6423FB1B58007831A7 /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC6223FB1B58007831A7 /* ScreenshotCell.swift */; };
 		E38DCC6523FB1B58007831A7 /* ScreenshotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38DCC6323FB1B58007831A7 /* ScreenshotCell.xib */; };
-		E38DCC6823FB1E0C007831A7 /* CommonLableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC6623FB1E0C007831A7 /* CommonLableCell.swift */; };
-		E38DCC6923FB1E0C007831A7 /* CommonLableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38DCC6723FB1E0C007831A7 /* CommonLableCell.xib */; };
+		E38DCC6823FB1E0C007831A7 /* CommonLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC6623FB1E0C007831A7 /* CommonLabelCell.swift */; };
+		E38DCC6923FB1E0C007831A7 /* CommonLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38DCC6723FB1E0C007831A7 /* CommonLabelCell.xib */; };
 		E38DCC6D23FB1EC6007831A7 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC6B23FB1EC6007831A7 /* ExpandableCell.swift */; };
 		E38DCC6E23FB1EC6007831A7 /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38DCC6C23FB1EC6007831A7 /* ExpandableCell.xib */; };
 		E38DCC7123FB1EE8007831A7 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DCC6F23FB1EE8007831A7 /* DescriptionCell.swift */; };
@@ -70,8 +70,8 @@
 		E38DCC5E23FB19CF007831A7 /* HorizontalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionCell.swift; sourceTree = "<group>"; };
 		E38DCC6223FB1B58007831A7 /* ScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		E38DCC6323FB1B58007831A7 /* ScreenshotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenshotCell.xib; sourceTree = "<group>"; };
-		E38DCC6623FB1E0C007831A7 /* CommonLableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLableCell.swift; sourceTree = "<group>"; };
-		E38DCC6723FB1E0C007831A7 /* CommonLableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonLableCell.xib; sourceTree = "<group>"; };
+		E38DCC6623FB1E0C007831A7 /* CommonLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLabelCell.swift; sourceTree = "<group>"; };
+		E38DCC6723FB1E0C007831A7 /* CommonLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonLabelCell.xib; sourceTree = "<group>"; };
 		E38DCC6B23FB1EC6007831A7 /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
 		E38DCC6C23FB1EC6007831A7 /* ExpandableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
 		E38DCC6F23FB1EE8007831A7 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
@@ -172,9 +172,9 @@
 			children = (
 				E31D706423FA57A900A35942 /* Common */,
 				E31D705F23F9ECF600A35942 /* Cell */,
-				E30E046323F68B4C0055569C /* MainViewController.swift */,
 				E31D705D23F8A3C100A35942 /* BaseViewController.swift */,
 				E38DCC5423FA99F4007831A7 /* BaseNaviController.swift */,
+				E30E046323F68B4C0055569C /* MainViewController.swift */,
 				E38DCC7323FB1F9F007831A7 /* DetailViewController.swift */,
 			);
 			path = View;
@@ -212,8 +212,8 @@
 				E38DCC5623FAFDC0007831A7 /* BlankCell.swift */,
 				E38DCC5723FAFDC0007831A7 /* BlankCell.xib */,
 				E38DCC5E23FB19CF007831A7 /* HorizontalCollectionCell.swift */,
-				E38DCC6623FB1E0C007831A7 /* CommonLableCell.swift */,
-				E38DCC6723FB1E0C007831A7 /* CommonLableCell.xib */,
+				E38DCC6623FB1E0C007831A7 /* CommonLabelCell.swift */,
+				E38DCC6723FB1E0C007831A7 /* CommonLabelCell.xib */,
 				E38DCC6B23FB1EC6007831A7 /* ExpandableCell.swift */,
 				E38DCC6C23FB1EC6007831A7 /* ExpandableCell.xib */,
 				E38DCC6F23FB1EE8007831A7 /* DescriptionCell.swift */,
@@ -321,7 +321,7 @@
 				E38DCC5923FAFDC0007831A7 /* BlankCell.xib in Resources */,
 				E38DCC7223FB1EE8007831A7 /* DescriptionCell.xib in Resources */,
 				E3C57AA123FBA7950008E6C0 /* PriceCell.xib in Resources */,
-				E38DCC6923FB1E0C007831A7 /* CommonLableCell.xib in Resources */,
+				E38DCC6923FB1E0C007831A7 /* CommonLabelCell.xib in Resources */,
 				E30E046923F68B4C0055569C /* Assets.xcassets in Resources */,
 				E30E046723F68B4C0055569C /* Main.storyboard in Resources */,
 				E38DCC7C23FB2AE9007831A7 /* CategoryCell.xib in Resources */,
@@ -391,7 +391,7 @@
 				6DFABC71D5F596213C82FF74 /* NetworkHelp.swift in Sources */,
 				E38DCC6423FB1B58007831A7 /* ScreenshotCell.swift in Sources */,
 				E38DCC7423FB1F9F007831A7 /* DetailViewController.swift in Sources */,
-				E38DCC6823FB1E0C007831A7 /* CommonLableCell.swift in Sources */,
+				E38DCC6823FB1E0C007831A7 /* CommonLabelCell.swift in Sources */,
 				E31D706623FA57E000A35942 /* BorderView.swift in Sources */,
 				E38DCC7723FB2081007831A7 /* SectionCell.swift in Sources */,
 				6DFABAD74475E5376FCE5478 /* NetworkDefine.swift in Sources */,
