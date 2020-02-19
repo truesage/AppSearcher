@@ -46,10 +46,19 @@ class BaseViewController: UIViewController {
         self.tableView.canCancelContentTouches = false
         self.tableView.separatorStyle = .none
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 200
+        self.tableView.estimatedRowHeight = 44
 
-        self.tableView.register(UINib(nibName: "AppSimpleInfoCell", bundle: Bundle.main), forCellReuseIdentifier: "AppSimpleInfoCell")
-        self.tableView.register(UINib(nibName: "BlankCell", bundle: Bundle.main), forCellReuseIdentifier: "BlankCell")
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.BlankCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.BlankCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.CommonLabelCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.CommonLabelCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.DescriptionCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.DescriptionCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.ExpandableCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.ExpandableCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.SectionCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.SectionCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.TwoButtonCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.TwoButtonCell.rawValue)
+//        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.CategoryCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.CategoryCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.PriceCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.PriceCell.rawValue)
+        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.AppSimpleInfoCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.AppSimpleInfoCell.rawValue)
+
+        self.tableView.register(HorizontalCollectionCell.self, forCellReuseIdentifier: CellConstant.CellIdentifier.HorizontalCollectionCell.rawValue)
 
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self.tableView)
@@ -85,6 +94,26 @@ class BaseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    func getTableViewCell(_ tableView: UITableView, data: Any) -> UITableViewCell? {
+        guard let data = data as? CellData, let type = data.type else {
+            return nil
+        }
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.getTableViewCellIdentifier(type))
+        if type == .BLANK {
+            return cell
+        }
+        if type == .COMMON_LABEL {
+            guard let cell = cell as? CommonLabelCell else {
+                return nil
+            }
+            cell.setData(data)
+            return cell
+        }
+
+        return nil
+    }
 
 }
 

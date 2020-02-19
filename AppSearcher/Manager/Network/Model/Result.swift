@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Result: Codable, CustomStringConvertible {
+class Result: Codable {
     var isGameCenterEnabled: Bool?
     var artistViewUrl: String?
     var artworkUrl60: String?
@@ -47,8 +47,6 @@ class Result: Codable, CustomStringConvertible {
     var bundleId: String?
     var averageUserRating: Double?
     var userRatingCount: Int?
+    var description: String?
 
-    var description: String {
-        "Result(isGameCenterEnabled: \(isGameCenterEnabled), artistViewUrl: \(artistViewUrl), artworkUrl60: \(artworkUrl60), artworkUrl100: \(artworkUrl100), artworkUrl512: \(artworkUrl512), screenshotUrls: \(screenshotUrls), supportedDevices: \(supportedDevices), kind: \(kind), contentAdvisoryRating: \(contentAdvisoryRating), languageCodesISO2A: \(languageCodesISO2A), fileSizeBytes: \(fileSizeBytes), averageUserRatingForCurrentVersion: \(averageUserRatingForCurrentVersion), userRatingCountForCurrentVersion: \(userRatingCountForCurrentVersion), trackContentRating: \(trackContentRating), trackViewUrl: \(trackViewUrl), trackCensoredName: \(trackCensoredName), trackId: \(trackId), trackName: \(trackName), releaseDate: \(releaseDate), currentVersionReleaseDate: \(currentVersionReleaseDate), formattedPrice: \(formattedPrice), releaseNotes: \(releaseNotes), isVppDeviceBasedLicensingEnabled: \(isVppDeviceBasedLicensingEnabled), primaryGenreName: \(primaryGenreName), genreIds: \(genreIds), minimumOsVersion: \(minimumOsVersion), primaryGenreId: \(primaryGenreId), sellerName: \(sellerName), version: \(version), wrapperType: \(wrapperType), currency: \(currency), artistId: \(artistId), artistName: \(artistName), genres: \(genres), price: \(price), bundleId: \(bundleId), averageUserRating: \(averageUserRating), userRatingCount: \(userRatingCount))"
-    }
 }

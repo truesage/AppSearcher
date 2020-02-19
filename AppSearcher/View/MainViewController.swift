@@ -63,6 +63,20 @@ class MainViewController: BaseViewController, RequestDelegate {
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        if let list = dataList, list.count <= indexPath.row {
+            return
+        }
+        guard let data: Result = dataList?[indexPath.row] as? Result else {
+            return
+        }
+
+        let detailView = DetailViewController.init()
+        detailView.setData(data: data)
+        self.navigationController?.pushViewController(detailView, animated: true)
+    }
+
     // MARK: - UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let list = dataList, list.count > 0 {
@@ -73,14 +87,12 @@ class MainViewController: BaseViewController, RequestDelegate {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let list = dataList, list.count <= indexPath.row {
-            let BlankCellIdentifier: String = "BlankCell"
-            if let cell: BlankCell = tableView.dequeueReusableCell(withIdentifier: BlankCellIdentifier) as? BlankCell {
+            if let cell: BlankCell = tableView.dequeueReusableCell(withIdentifier: CellConstant.CellIdentifier.BlankCell.rawValue) as? BlankCell {
                 cell.backgroundColor = RGB(242, 242, 242)
                 return cell
             }
         }
-        let CellIdentifier: String = "AppSimpleInfoCell"
-        guard let data: Result = dataList?[indexPath.row] as? Result, let cell: AppSimpleInfoCell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier) as? AppSimpleInfoCell else {
+        guard let data: Result = dataList?[indexPath.row] as? Result, let cell: AppSimpleInfoCell = tableView.dequeueReusableCell(withIdentifier: CellConstant.CellIdentifier.AppSimpleInfoCell.rawValue) as? AppSimpleInfoCell else {
             return super.tableView(tableView, cellForRowAt: indexPath)
         }
 

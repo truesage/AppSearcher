@@ -8,17 +8,16 @@
 
 import UIKit
 
-class CategoryCell: UITableViewCell {
+class CategoryCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
+    func setData(_ data: String) {
 
-        // Configure the view for the selected state
     }
+
     
 }

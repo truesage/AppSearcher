@@ -30,7 +30,7 @@ class AppSimpleInfoCell: UITableViewCell {
     }
     
     func setData(data: Result, indexPath: IndexPath) {
-        BASE_LOG()
+        Log(output: String(indexPath.row) + "///" + data.trackName!)
         clear()
         if let iconURL = data.artworkUrl512 {
             imgIcon.downloaded(from: iconURL, contentMode: .scaleAspectFit)

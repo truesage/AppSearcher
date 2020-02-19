@@ -16,8 +16,29 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knv-8P-LfD" userLabel="SeparatorView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Knv-8P-LfD" secondAttribute="trailing" id="0WC-BO-QvV"/>
+                    <constraint firstAttribute="bottom" secondItem="Knv-8P-LfD" secondAttribute="bottom" id="7Dh-6L-EAe"/>
+                    <constraint firstItem="Knv-8P-LfD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YIy-ph-auI"/>
+                    <constraint firstItem="Knv-8P-LfD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cG8-vl-pGh"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="constraintSepaBottom" destination="7Dh-6L-EAe" id="SlF-31-xKJ"/>
+                <outlet property="constraintSepaLeading" destination="YIy-ph-auI" id="Ug7-Mj-bSI"/>
+                <outlet property="constraintSepaTop" destination="cG8-vl-pGh" id="nLI-TF-yug"/>
+                <outlet property="constraintSepaTrailing" destination="0WC-BO-QvV" id="2c8-vx-QWq"/>
+                <outlet property="viewSeparator" destination="Knv-8P-LfD" id="jwQ-nx-hds"/>
+            </connections>
             <point key="canvasLocation" x="139" y="105"/>
         </tableViewCell>
     </objects>

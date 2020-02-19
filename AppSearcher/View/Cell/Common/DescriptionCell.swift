@@ -10,6 +10,8 @@ import UIKit
 
 class DescriptionCell: UITableViewCell {
 
+    @IBOutlet weak var lblContents: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +22,13 @@ class DescriptionCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setData(_ data: CellData) {
+        clear()
+        lblContents.text = data.desc
+    }
+
+    func clear() {
+        lblContents.text = nil
+    }
 }

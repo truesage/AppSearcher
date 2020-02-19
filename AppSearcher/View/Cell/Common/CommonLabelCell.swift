@@ -8,7 +8,10 @@
 
 import UIKit
 
-class CommonLableCell: UITableViewCell {
+class CommonLabelCell: UITableViewCell {
+
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblSubTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +22,17 @@ class CommonLableCell: UITableViewCell {
 //        super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func setData(_ data: CellData) {
+        clear()
+        lblTitle.text = data.title
+        lblSubTitle.text = data.subTitle
+    }
+
+    func clear() {
+        lblTitle.text = nil
+        lblSubTitle.text = nil
     }
     
 }
