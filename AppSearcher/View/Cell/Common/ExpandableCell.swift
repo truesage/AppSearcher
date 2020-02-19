@@ -39,10 +39,14 @@ class ExpandableCell: UITableViewCell {
         lblRight.text = data.value
 
         if data.type == .EXPANDABLE {
-            lblDesc.text = data.desc
             btnExpandIcon.isHidden = false
             if data.isExpand != btnExpandIcon.isSelected {
                 setExpnad(expand: data.isExpand)
+                if data.isExpand == true {
+                    lblDesc.text = data.desc
+                } else {
+                    lblDesc.text = nil
+                }
             }
         }
     }

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandableCell" rowHeight="107" id="KGk-i7-Jjw" customClass="ExpandableCell" customModule="AppSearcher" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExpandableCell" id="KGk-i7-Jjw" customClass="ExpandableCell" customModule="AppSearcher" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="1" id="Mek-oS-KtY"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="LabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-E5-gW3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-E5-gW3">
                                 <rect key="frame" x="0.0" y="14" width="223" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -45,8 +45,8 @@
                                     <constraint firstAttribute="width" constant="10" id="KpF-Bp-jUW"/>
                                     <constraint firstAttribute="height" constant="10" id="bDC-Tx-ehF"/>
                                 </constraints>
-                                <state key="normal" image="icons8-collapse-arrow-50"/>
-                                <state key="selected" image="icons8-expand-arrow-50"/>
+                                <state key="normal" image="icons8-expand-arrow-50"/>
+                                <state key="selected" image="icons8-collapse-arrow-50"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,11 +65,11 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7y-n6-sDn">
-                        <rect key="frame" x="18" y="44" width="284" height="0.0"/>
+                        <rect key="frame" x="18" y="44" width="284" height="63"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-KG-9HO">
-                        <rect key="frame" x="26" y="44" width="268" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0b-KG-9HO">
+                        <rect key="frame" x="26" y="44" width="268" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -78,6 +78,7 @@
                 <constraints>
                     <constraint firstItem="J0b-KG-9HO" firstAttribute="top" secondItem="U7y-n6-sDn" secondAttribute="top" id="08b-qL-sm6"/>
                     <constraint firstItem="5Zs-LD-vf4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4bJ-gS-9gO"/>
+                    <constraint firstAttribute="bottom" secondItem="U7y-n6-sDn" secondAttribute="bottom" id="6lI-na-1Mg"/>
                     <constraint firstItem="J0b-KG-9HO" firstAttribute="trailing" secondItem="4tp-ir-xeJ" secondAttribute="trailing" constant="-8" id="J2O-LU-oNy"/>
                     <constraint firstItem="5Zs-LD-vf4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="P0X-aN-4kw"/>
                     <constraint firstItem="U7y-n6-sDn" firstAttribute="trailing" secondItem="5Zs-LD-vf4" secondAttribute="trailing" id="YAC-7e-LX2"/>
@@ -91,8 +92,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnExpandIcon" destination="MZv-1p-VDw" id="HDd-5v-mnF"/>
-                <outlet property="constraintDescMarginBottom" destination="rcE-wq-eeg" id="YMQ-i7-hU2"/>
-                <outlet property="constraintDescMarginTop" destination="08b-qL-sm6" id="nCr-en-Ohc"/>
+                <outlet property="constraintDescMarginBottom" destination="rcE-wq-eeg" id="2z4-Zl-jsT"/>
+                <outlet property="constraintDescMarginTop" destination="08b-qL-sm6" id="nkv-De-Kb5"/>
                 <outlet property="lblDesc" destination="J0b-KG-9HO" id="VHt-Fg-IL2"/>
                 <outlet property="lblLeft" destination="dfx-E5-gW3" id="3sy-5g-wPx"/>
                 <outlet property="lblRight" destination="fhc-te-2TD" id="HIh-di-f5Q"/>

@@ -33,6 +33,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickLeft:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="49L-qH-vCg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5v-I7-Qid">
                                 <rect key="frame" x="141.5" y="0.0" width="142.5" height="44"/>
@@ -40,6 +43,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="onClickRight:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KMj-d6-Z9d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -78,6 +84,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnLeft" destination="eUk-iZ-XM7" id="CiK-Rh-8eu"/>
+                <outlet property="btnRight" destination="N5v-I7-Qid" id="faQ-Zx-l2S"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
         </tableViewCell>
     </objects>

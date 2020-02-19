@@ -31,3 +31,10 @@ class ScreenshotData {
     var image: UIImage?
     var size: CGSize?
 }
+
+class TwoButtonCellData: CellData {
+    var leftTitle: String?
+    var rightTitle: String?
+    var leftClickListener: () -> Void = {}
+    var rightClickListener: () -> Void = {}
+}

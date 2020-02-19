@@ -32,7 +32,6 @@ class DetailViewController: BaseViewController {
             item.type = .SCREENSHOT
             item.valueList = screenshotUrls
             item.screenshotList = [ScreenshotData]()
-//            item.height = 1
             for i in 0..<screenshotUrls.count {
                 guard let url = URL(string: screenshotUrls[i]) else {
                     continue
@@ -45,7 +44,7 @@ class DetailViewController: BaseViewController {
                     if let data = data, let image = UIImage(data: data) {
                         screenshot.image = image
                         screenshot.size = CGSize(width: image.size.width * 0.6, height: image.size.height * 0.6)
-                        item.height = screenshot.size!.height + 16
+                        item.height = screenshot.size!.height + 8
                         DispatchQueue.main.async {
                             self?.tableView.reloadData()
                         }
@@ -72,7 +71,31 @@ class DetailViewController: BaseViewController {
                 numberFormatter.numberStyle = .decimal
                 item.title = numberFormatter.string(from: NSNumber(value: price))
             }
+//            item.height = 34
             dataList?.append(item)
+        }
+
+        if let trackViewUrl = data.trackViewUrl {
+            let item = TwoButtonCellData()
+            item.type = .TWO_BUTTON
+            item.height = 60
+            item.leftTitle = "웹에서 보기"
+            item.value = trackViewUrl
+            item.leftClickListener = {
+                if let url = URL(string: trackViewUrl) {
+                    UIApplication.shared.open(url, options: [:])
+                }
+            }
+            item.rightTitle = "공유하기"
+            item.rightClickListener = { [weak self] in
+                if let url = URL(string: trackViewUrl) {
+                    let items = [url]
+                    let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                    self?.present(ac, animated: true)
+                }
+            }
+            dataList?.append(item)
+
         }
 
         if let bytes = data.fileSizeBytes, let bytesInt = Int64(bytes) {
@@ -147,6 +170,7 @@ class DetailViewController: BaseViewController {
 
         if type == .PRICE {
             if let cell = cell as? PriceCell {
+                cell.setData(data)
                 return cell
             }
         }

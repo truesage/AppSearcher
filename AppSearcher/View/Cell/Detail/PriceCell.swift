@@ -11,7 +11,7 @@ import UIKit
 class PriceCell: UITableViewCell {
 
     @IBOutlet weak var lblPrice: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +22,22 @@ class PriceCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setData(_ data: CellData) {
+        clear()
+        guard let title = data.title else {
+            lblPrice.text = "무료"
+            return
+        }
+        let price = NSMutableAttributedString(string: title, attributes: [.font: UIFont.boldSystemFont(ofSize: 19)])
+        price.append(
+                NSAttributedString(string: " 원", attributes: [.font: UIFont.systemFont(ofSize: 14)])
+        )
+        lblPrice.attributedText = price
+    }
+
+    func clear() {
+        lblPrice.text = nil
+        lblPrice.attributedText = nil
+    }
 }

@@ -104,6 +104,7 @@ class BaseViewController: UIViewController {
         if type == .BLANK {
             return cell
         }
+
         if type == .COMMON_LABEL {
             guard let cell = cell as? CommonLabelCell else {
                 return nil
@@ -111,6 +112,40 @@ class BaseViewController: UIViewController {
             cell.setData(data)
             return cell
         }
+
+        if type == .DESCRIPTION {
+            guard let cell = cell as? DescriptionCell else {
+                return nil
+            }
+            cell.setData(data)
+            return cell
+        }
+
+        if type == .EXPANDABLE ||
+                   type == .TITLE_VALUE {
+            guard let cell = cell as? ExpandableCell else {
+                return nil
+            }
+            cell.setData(data)
+            return cell
+        }
+
+        if type == .SECTION {
+            guard let cell = cell as? SectionCell else {
+                return nil
+            }
+            cell.setData(data)
+            return cell
+        }
+
+        if type == .TWO_BUTTON {
+            guard let cell = cell as? TwoButtonCell, let data = data as? TwoButtonCellData else {
+                return nil
+            }
+            cell.setData(data)
+            return cell
+        }
+
 
         return nil
     }

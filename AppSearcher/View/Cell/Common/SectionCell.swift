@@ -11,7 +11,7 @@ import UIKit
 class SectionCell: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,5 +22,13 @@ class SectionCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setData(_ data: CellData) {
+        clear()
+        lblTitle.text = data.title
+    }
+
+    func clear() {
+        lblTitle.text = nil
+    }
 }
