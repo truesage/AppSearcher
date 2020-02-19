@@ -10,7 +10,9 @@ import UIKit
 
 class MainViewController: BaseViewController, RequestDelegate {
 
-    var keyword: String = ""
+    lazy var keyword: String = {
+        "핸드메이드"
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +21,6 @@ class MainViewController: BaseViewController, RequestDelegate {
 
         self.tableView.contentInset = UIEdgeInsets(top: 8.0, left: 0.0, bottom: 0.0, right: 0.0)
 
-        keyword = "핸드메이드"
         if !RequestManager.shared.requestSearch(keyword: keyword, delegate: self) {
             Log(output: "Request Fail")
         }
@@ -28,7 +29,7 @@ class MainViewController: BaseViewController, RequestDelegate {
             navigationController?.navigationBar.prefersLargeTitles = true
 //            navigationItem.largeTitleDisplayMode = .never
         }
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationItem.title = keyword
     }
 

@@ -71,7 +71,6 @@ class DetailViewController: BaseViewController {
                 numberFormatter.numberStyle = .decimal
                 item.title = numberFormatter.string(from: NSNumber(value: price))
             }
-//            item.height = 34
             dataList?.append(item)
         }
 
@@ -127,6 +126,12 @@ class DetailViewController: BaseViewController {
             item.value = data.version
             item.desc = releaseNotes
             dataList?.append(item)
+        } else {
+            let item = CellData()
+            item.type = .TITLE_VALUE
+            item.title = "버전"
+            item.value = data.version
+            dataList?.append(item)
         }
 
         if let description = data.description {
@@ -180,7 +185,6 @@ class DetailViewController: BaseViewController {
         }
 
         if type == .CATEGORY {
-            // TODO
             if let cell = cell as? HorizontalCollectionCell {
                 cell.setData(data, indexPath: indexPath)
                 return cell

@@ -63,7 +63,7 @@ class BaseViewController: UIViewController {
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self.tableView)
 //        self.tableView.backgroundColor = RGB(242, 242, 242)
-        self.tableView.backgroundColor = UIColor.white
+//        self.tableView.backgroundColor = UIColor.white
         self.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         self.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         self.tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
