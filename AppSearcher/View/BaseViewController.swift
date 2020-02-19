@@ -102,6 +102,13 @@ class BaseViewController: UIViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.getTableViewCellIdentifier(type))
         if type == .BLANK {
+            guard let cell = cell as? BlankCell else {
+                return nil
+            }
+            cell.clear()
+            if let bgColor = data.bgColor {
+                cell.setBGColor(bgColor)
+            }
             return cell
         }
 

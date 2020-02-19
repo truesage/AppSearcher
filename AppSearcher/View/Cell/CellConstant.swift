@@ -11,6 +11,7 @@ import Foundation
 class CellConstant {
     enum CellType {
         case BLANK
+        case SEPARATOR
         case COMMON_LABEL
         case DESCRIPTION
         case EXPANDABLE
@@ -41,7 +42,8 @@ class CellConstant {
     class func getTableViewCellIdentifier(_ type: CellType) -> String {
         var identifier: String?
         switch (type) {
-        case .BLANK:
+        case .BLANK,
+             .SEPARATOR:
             identifier = CellIdentifier.BlankCell.rawValue
         case .COMMON_LABEL:
             identifier = CellIdentifier.CommonLabelCell.rawValue

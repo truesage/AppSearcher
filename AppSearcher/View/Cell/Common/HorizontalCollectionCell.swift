@@ -65,8 +65,9 @@ class HorizontalCollectionCell: UITableViewCell {
             valueList = data.screenshotList
         }
         if data.type == .CATEGORY {
-            collectionLayout.sectionInset = UIEdgeInsets(top: 8, left: 18, bottom: 0, right: 18)
+            collectionLayout.sectionInset = UIEdgeInsets(top: 8, left: 18, bottom: 18, right: 18)
         }
+        collectionView.reloadData()
     }
 
 }

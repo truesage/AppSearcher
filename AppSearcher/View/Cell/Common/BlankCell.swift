@@ -36,8 +36,13 @@ class BlankCell: UITableViewCell {
         viewSeparator.backgroundColor = color
         viewSeparator.isHidden = false
     }
+
+    func setBGColor(_ color: UIColor) {
+        contentView.backgroundColor = color
+    }
     
     func clear() {
+        contentView.backgroundColor = UIColor.white
         viewSeparator.isHidden = true
     }
     

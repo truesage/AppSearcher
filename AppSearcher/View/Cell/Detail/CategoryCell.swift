@@ -10,14 +10,21 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     func setData(_ data: String) {
-
+        clear()
+        lblTitle.text = "#" + data
     }
 
-    
+    func clear() {
+        lblTitle.text = nil
+    }
+
+
 }

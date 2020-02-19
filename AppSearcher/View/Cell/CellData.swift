@@ -19,6 +19,7 @@ class CellData {
     var height: CGFloat = -1
     var isExpand: Bool = false
     var valueList: [String]?
+    var bgColor: UIColor?
 }
 
 class ScreenshotCellData: CellData {

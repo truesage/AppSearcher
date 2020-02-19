@@ -16,7 +16,48 @@
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KVX-7c-W7S">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cat-ho-t3h" customClass="BorderView" customModule="AppSearcher" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="9" width="50" height="32"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpx-4x-ZFK">
+                        <rect key="frame" x="8" y="17" width="34" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="qn8-j0-yIe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="trailing" secondItem="cat-ho-t3h" secondAttribute="trailing" constant="-8" id="A3o-hs-yQC"/>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="top" secondItem="cat-ho-t3h" secondAttribute="top" constant="8" id="CEs-AV-GWQ"/>
+                    <constraint firstAttribute="bottom" secondItem="cat-ho-t3h" secondAttribute="bottom" priority="750" id="DeR-an-j4G"/>
+                    <constraint firstItem="cat-ho-t3h" firstAttribute="top" secondItem="KVX-7c-W7S" secondAttribute="top" priority="750" id="DqD-DG-rmi"/>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="centerY" secondItem="KVX-7c-W7S" secondAttribute="centerY" id="EVo-26-oWx"/>
+                    <constraint firstItem="cat-ho-t3h" firstAttribute="leading" secondItem="KVX-7c-W7S" secondAttribute="leading" priority="750" id="PAf-XU-86s"/>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="centerX" secondItem="KVX-7c-W7S" secondAttribute="centerX" id="bD2-Uj-spI"/>
+                    <constraint firstAttribute="trailing" secondItem="cat-ho-t3h" secondAttribute="trailing" priority="750" id="eli-Bv-Mb5"/>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="bottom" secondItem="cat-ho-t3h" secondAttribute="bottom" constant="-8" id="m9Y-ND-ywL"/>
+                    <constraint firstItem="wpx-4x-ZFK" firstAttribute="leading" secondItem="cat-ho-t3h" secondAttribute="leading" constant="8" id="q49-2A-ueU"/>
+                </constraints>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="lblTitle" destination="wpx-4x-ZFK" id="tPH-un-IYQ"/>
+            </connections>
             <point key="canvasLocation" x="136" y="121"/>
         </collectionViewCell>
     </objects>

@@ -98,6 +98,11 @@ class DetailViewController: BaseViewController {
 
         }
 
+        let separator = CellData()
+        separator.type = .SEPARATOR
+        separator.height = 1
+        dataList?.append(separator)
+
         if let bytes = data.fileSizeBytes, let bytesInt = Int64(bytes) {
             let fileSize = ByteCountFormatter.string(fromByteCount: bytesInt, countStyle: .binary)
             let item = CellData()
@@ -134,6 +139,7 @@ class DetailViewController: BaseViewController {
         let blank = CellData()
         blank.type = .BLANK
         blank.height = 16
+        blank.bgColor = RGB(242, 242, 242)
         dataList?.append(blank)
 
         if let genres = data.genres {
@@ -145,6 +151,7 @@ class DetailViewController: BaseViewController {
             let item = CellData()
             item.type = .CATEGORY
             item.valueList = genres
+            item.height = 58
             dataList?.append(item)
 
             dataList?.append(blank)
@@ -164,8 +171,20 @@ class DetailViewController: BaseViewController {
 
         cell = tableView.dequeueReusableCell(withIdentifier: CellConstant.getTableViewCellIdentifier(type))
 
+        if type == .SEPARATOR {
+            if let cell = cell as? BlankCell {
+                cell.clear()
+                cell.setSeparator(leading: 18, trailing: 18)
+                return cell
+            }
+        }
+
         if type == .CATEGORY {
             // TODO
+            if let cell = cell as? HorizontalCollectionCell {
+                cell.setData(data, indexPath: indexPath)
+                return cell
+            }
         }
 
         if type == .PRICE {
