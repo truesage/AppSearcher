@@ -54,7 +54,6 @@ class BaseViewController: UIViewController {
         self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.ExpandableCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.ExpandableCell.rawValue)
         self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.SectionCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.SectionCell.rawValue)
         self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.TwoButtonCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.TwoButtonCell.rawValue)
-//        self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.CategoryCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.CategoryCell.rawValue)
         self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.PriceCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.PriceCell.rawValue)
         self.tableView.register(UINib(nibName: CellConstant.CellIdentifier.AppSimpleInfoCell.rawValue, bundle: Bundle.main), forCellReuseIdentifier: CellConstant.CellIdentifier.AppSimpleInfoCell.rawValue)
 
@@ -76,8 +75,6 @@ class BaseViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initView()
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -152,7 +149,6 @@ class BaseViewController: UIViewController {
             cell.setData(data)
             return cell
         }
-
 
         return nil
     }

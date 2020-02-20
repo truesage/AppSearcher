@@ -10,9 +10,7 @@ import UIKit
 
 class MainViewController: BaseViewController, RequestDelegate {
 
-    lazy var keyword: String = {
-        "핸드메이드"
-    }()
+    var keyword: String = "핸드메이드"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +25,7 @@ class MainViewController: BaseViewController, RequestDelegate {
 
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
-//            navigationItem.largeTitleDisplayMode = .never
         }
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationItem.title = keyword
     }
 
@@ -89,7 +85,8 @@ class MainViewController: BaseViewController, RequestDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let list = dataList, list.count <= indexPath.row {
             if let cell: BlankCell = tableView.dequeueReusableCell(withIdentifier: CellConstant.CellIdentifier.BlankCell.rawValue) as? BlankCell {
-                cell.backgroundColor = RGB(242, 242, 242)
+                cell.clear()
+                cell.setBGColor(RGB(242, 242, 242))
                 return cell
             }
         }
