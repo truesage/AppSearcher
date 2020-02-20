@@ -32,8 +32,8 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="constraintHeight" destination="FmP-Du-nKc" id="5Yf-yw-4Ng"/>
-                <outlet property="constraintWidth" destination="JW7-87-XNF" id="Epg-B2-yyu"/>
+                <outlet property="constraintHeight" destination="FmP-Du-nKc" id="Nox-OM-IjQ"/>
+                <outlet property="constraintWidth" destination="JW7-87-XNF" id="POo-ae-9P7"/>
                 <outlet property="imgScreenshot" destination="Y9n-Ja-Z4e" id="TrR-hK-f5i"/>
             </connections>
             <point key="canvasLocation" x="139" y="109"/>

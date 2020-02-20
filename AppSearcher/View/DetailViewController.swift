@@ -16,7 +16,6 @@ class DetailViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         if #available(iOS 11.0, *) {
-//            navigationController?.navigationBar.prefersLargeTitles = true
             navigationItem.largeTitleDisplayMode = .never
         }
     }
@@ -44,7 +43,7 @@ class DetailViewController: BaseViewController {
                     if let data = data, let image = UIImage(data: data) {
                         screenshot.image = image
                         screenshot.size = CGSize(width: image.size.width * 0.6, height: image.size.height * 0.6)
-                        item.height = screenshot.size!.height + 8
+                        item.height = screenshot.size!.height + 17
                         DispatchQueue.main.async {
                             self?.tableView.reloadData()
                         }
@@ -156,7 +155,7 @@ class DetailViewController: BaseViewController {
             let item = CellData()
             item.type = .CATEGORY
             item.valueList = genres
-            item.height = 58
+            item.height = 84
             dataList?.append(item)
 
             dataList?.append(blank)

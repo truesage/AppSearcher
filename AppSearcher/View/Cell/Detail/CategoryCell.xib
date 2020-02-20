@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="ZtR-st-SNS" customClass="CategoryCell" customModule="AppSearcher" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KVX-7c-W7S">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cat-ho-t3h" customClass="BorderView" customModule="AppSearcher" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="9" width="50" height="32"/>
+                        <rect key="frame" x="0.0" y="4" width="50" height="32"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -33,7 +33,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpx-4x-ZFK">
-                        <rect key="frame" x="8" y="17" width="34" height="16"/>
+                        <rect key="frame" x="8" y="12" width="34" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="qn8-j0-yIe"/>
                         </constraints>
@@ -55,10 +55,11 @@
                     <constraint firstItem="wpx-4x-ZFK" firstAttribute="leading" secondItem="cat-ho-t3h" secondAttribute="leading" constant="8" id="q49-2A-ueU"/>
                 </constraints>
             </collectionViewCellContentView>
+            <size key="customSize" width="50" height="40"/>
             <connections>
                 <outlet property="lblTitle" destination="wpx-4x-ZFK" id="tPH-un-IYQ"/>
             </connections>
-            <point key="canvasLocation" x="136" y="121"/>
+            <point key="canvasLocation" x="134.78260869565219" y="117.1875"/>
         </collectionViewCell>
     </objects>
 </document>

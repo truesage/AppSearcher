@@ -26,5 +26,15 @@ class CategoryCell: UICollectionViewCell {
         lblTitle.text = nil
     }
 
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        //Exhibit A - We need to cache our calculation to prevent a crash.
+        setNeedsLayout()
+        layoutIfNeeded()
+        var newFrame = layoutAttributes.frame
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        newFrame.size = size
+        layoutAttributes.frame = newFrame
+        return layoutAttributes
+    }
 
 }

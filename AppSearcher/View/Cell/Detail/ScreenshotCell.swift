@@ -42,11 +42,12 @@ class ScreenshotCell: UICollectionViewCell {
             layoutIfNeeded()
             var newFrame = layoutAttributes.frame
             if let size = data?.size {
-                newFrame.size = size
+                newFrame.size.height = CGFloat(ceilf(Float(size.height)))
+                newFrame.size.width = CGFloat(ceilf(Float(size.width)))
                 isHeightCalculated = true
             } else {
                 let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
-                newFrame.size.width = CGFloat(ceilf(Float(size.width)))
+                newFrame.size = size
             }
             layoutAttributes.frame = newFrame
         }

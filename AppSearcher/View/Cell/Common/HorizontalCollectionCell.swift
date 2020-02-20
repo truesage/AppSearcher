@@ -15,15 +15,20 @@ class HorizontalCollectionCell: UITableViewCell {
 
     var collectionView: UICollectionView!
     var collectionLayout: UICollectionViewFlowLayout!
+    var leadingConstraint: NSLayoutConstraint!
+    var trailingConstraint: NSLayoutConstraint!
+    var topConstraint: NSLayoutConstraint!
+    var bottomConstraint: NSLayoutConstraint!
 
     override init(style: CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         collectionLayout = UICollectionViewFlowLayout()
         collectionLayout.scrollDirection = .horizontal
-        collectionLayout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-//        layout.itemSize = CGSize(width: 300, height: 700)
-        collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        collectionLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionLayout.itemSize = UICollectionViewFlowLayout.automaticSize
+        collectionLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+
 
         collectionView = UICollectionView(frame: contentView.frame, collectionViewLayout: collectionLayout)
         collectionView.dataSource = self
@@ -35,10 +40,18 @@ class HorizontalCollectionCell: UITableViewCell {
         contentView.addSubview(collectionView)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        leadingConstraint = collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+        leadingConstraint.isActive = true
+
+        trailingConstraint = collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        trailingConstraint.isActive = true
+
+        topConstraint = collectionView.topAnchor.constraint(equalTo: contentView.topAnchor)
+        topConstraint.isActive = true
+
+        bottomConstraint = collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        bottomConstraint.isActive = true
 
     }
 
@@ -57,15 +70,28 @@ class HorizontalCollectionCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+//        collectionView.collectionViewLayout.invalidateLayout()
+
+    }
+
     func setData(_ data: CellData, indexPath: IndexPath) {
         self.data = data
         valueList = data.valueList
         self.indexPath = indexPath
         if data.type == .SCREENSHOT, let data = data as? ScreenshotCellData {
             valueList = data.screenshotList
+            leadingConstraint.constant = 18
+            trailingConstraint.constant = -18
+            topConstraint.constant = 8
+            bottomConstraint.constant = -8
         }
         if data.type == .CATEGORY {
-            collectionLayout.sectionInset = UIEdgeInsets(top: 8, left: 18, bottom: 18, right: 18)
+            leadingConstraint.constant = 18
+            trailingConstraint.constant = -18
+            topConstraint.constant = 8
+            bottomConstraint.constant = -18
         }
         collectionView.reloadData()
     }
@@ -90,9 +116,6 @@ extension HorizontalCollectionCell: UICollectionViewDataSource {
             if let cell = cell as? ScreenshotCell,
                let value = value as? ScreenshotData {
                 cell.setData(value)
-                if let size = value.size {
-//                    collectionLayout.itemSize = size
-                }
                 return cell
             }
         }
@@ -113,6 +136,12 @@ extension HorizontalCollectionCell: UICollectionViewDataSource {
 extension HorizontalCollectionCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     /*public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+    }*/
+    /*override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        BASE_LOG()
+        collectionView.frame = CGRect(x: 0, y: 0, width: targetSize.width, height: contentView.frame.height)
+        collectionView.layoutIfNeeded()
+        return collectionView.collectionViewLayout.collectionViewContentSize
     }*/
 }
 
