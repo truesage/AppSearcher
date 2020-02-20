@@ -72,6 +72,7 @@ class HorizontalCollectionCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        // TODO: iOS10 시뮬레이터 에서 아래 코드 없으면 크래시 발생. 아래코드 수행시 모든 버전에서 레이아웃 갱신 안됨.
 //        collectionView.collectionViewLayout.invalidateLayout()
 
     }
