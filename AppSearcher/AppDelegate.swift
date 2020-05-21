@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func branch1() {
         // commit 2
+        // commit 3
     }
 
     func branch2() {
